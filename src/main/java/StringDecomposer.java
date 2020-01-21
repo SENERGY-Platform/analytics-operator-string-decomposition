@@ -8,7 +8,6 @@ public class StringDecomposer implements OperatorInterface {
 
     Pattern pattern;
     String outputName;
-    Boolean convertToDouble;
 
     public StringDecomposer() {
         Config config = new Config();
@@ -16,7 +15,6 @@ public class StringDecomposer implements OperatorInterface {
         pattern = Pattern.compile(patternString);
 
         outputName = config.getConfigValue("outputName", "value");
-        convertToDouble = Boolean.parseBoolean(config.getConfigValue("convertToDouble", "True"));
     }
 
     @Override
@@ -24,13 +22,8 @@ public class StringDecomposer implements OperatorInterface {
         String composed = message.getInput("composed").getString();
         String[] split = pattern.split(composed);
 
-        if (convertToDouble) {
-            double val = Double.parseDouble(split[0]);
-            message.output(outputName, val);
-        } else {
-            message.output(outputName, split[0]);
-        }
-
+        double val = Double.parseDouble(split[0]);
+        message.output(outputName, val);
     }
 
     @Override
