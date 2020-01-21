@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class StringComposerTest {
+public class StringDecomposerTest {
 
     @Test
     public void run() throws Exception {
