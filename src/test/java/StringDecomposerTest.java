@@ -17,8 +17,8 @@ public class StringDecomposerTest {
 
             try {
                 m.addInput("decomposed");
-                double actual = Double.parseDouble(m.getMessageString().split("value\":")[1].split("}")[0]);
                 double expected = m.getInput("decomposed").getValue();
+                double actual = Double.parseDouble(m.getMessageString().split("value\":")[1].split("}")[0]);
                 Assert.assertEquals(expected, actual, 0.001);
                 System.out.println("Successfully decomposed.");
             } catch (NullPointerException | IndexOutOfBoundsException e) {

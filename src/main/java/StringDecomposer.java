@@ -22,8 +22,16 @@ public class StringDecomposer implements OperatorInterface {
         String composed = message.getInput("composed").getString();
         String[] split = pattern.split(composed);
 
-        double val = Double.parseDouble(split[0]);
-        message.output(outputName, val);
+        try {
+            double val = Double.parseDouble(split[0]);
+            message.output(outputName, val);
+        } catch(Exception e) {
+            if(composed.equals(""))
+                System.err.println("Got empty message string");
+            else
+                System.err.println("Could not parse: " + composed);
+            e.printStackTrace();
+        }
     }
 
     @Override
