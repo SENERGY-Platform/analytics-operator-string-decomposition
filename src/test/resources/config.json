@@ -1,0 +1,23 @@
+{
+  "config": {
+    "input": "true",
+    "inputs": "2"
+  },
+  "inputTopics": [
+    {
+      "Name": "test",
+      "FilterType": "DeviceId",
+      "FilterValue": "1",
+      "Mappings": [
+        {
+          "Dest": "composed",
+          "Source": "value.reading.composed"
+        },
+        {
+          "Dest": "decomposed",
+          "Source": "value.reading.decomposed"
+        }
+      ]
+    }
+  ]
+}

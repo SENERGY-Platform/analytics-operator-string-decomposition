@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import org.infai.seits.sepl.operators.OperatorInterface;
-import org.infai.seits.sepl.operators.Stream;
+
+import org.infai.ses.senergy.operators.OperatorInterface;
+import org.infai.ses.senergy.operators.Stream;
 
 public class Operator {
 
